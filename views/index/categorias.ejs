@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Categorias </title>
+</head>
+
+<style>
+    .categorias{
+        padding-left: 100px;
+    }
+
+    .botao{
+        background-color: #000000;
+        color: #FFFFFF;
+        border-radius: 8px;
+        width: 250px;
+        height: 100px;
+        font-family: 'poppins';
+    }
+
+</style>
+
+<body>
+
+    <h1>
+        Categorias
+    </h1>
+    
+    <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <button class="botao categorias" type="button" onclick="listarOld()">
+                        Old Money
+                    </button>
+
+                    <p>
+                        Description: houses for... 
+                    </p>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <button class="botao" type="button" onclick="listarModern()">
+                        Modern
+                    </button>
+
+                    <p>
+                        Description: houses for... 
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <button class="botao" type="button" onclick="listarBeach()">
+                        Beach
+                    </button>
+
+                    <p>
+                        Description: houses for... 
+                    </p>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <button class="botao" type="button" onclick="listarCity()">
+                        City
+                    </button>
+
+                    <p>
+                        Description: houses for... 
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        
+    </div>
+
+    <script>
+
+        let dadosDoBanco =[
+            {
+                "id": 1,
+                "nome": "Nome 1",
+                "email": "email1@site.com"
+            },
+
+            {
+                "id": 2,
+                "nome": "Nome 2",
+                "email": "email2@site.com"
+            },
+
+            {
+                "id": 3,
+                "nome": "Nome 3",
+                "email": "email3@site.com"
+            },
+
+            {
+                "id": 4,
+                "nome": "Nome 4",
+                "email": "email4@site.com"
+            }
+        ] 
+
+	</script>
+    
+</body>
+</html>

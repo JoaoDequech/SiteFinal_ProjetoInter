@@ -17,10 +17,22 @@ class IndexRoute {
 		res.render("index/index");
 	}
 
+	public async categorias(req: app.Request, res: app.Response) {
+		res.render("index/categorias");
+	}
+
+	public async propriedades(req: app.Request, res: app.Response) {
+		res.render("index/propriedades");
+	}
+
+	public async criar(req: app.Request, res: app.Response) {
+		res.render("index/criar");
+	}
+
 	@app.http.post()
 	// Configuração adicional para poder receber FormData e/ou arquivos.
 	@app.route.formData()
-	public async criarPessoa(req: app.Request, res: app.Response) {
+	public async criarPropriedade(req: app.Request, res: app.Response) {
 		// Os dados enviados via POST ficam dentro de req.body
 		let pessoa = req.body;
 

@@ -1,0 +1,96 @@
+img {
+    max-width: 100%;
+}
+
+.limitador {
+    max-width: 1300px;
+    margin: 0px auto;
+}
+
+.iconemenu {
+    padding-top: 30px;
+    padding-left: 30px;
+
+}
+
+.logo {
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+.perfil {
+    padding-top: 40px;
+    padding-left: 350px;
+}
+
+.weprovide {
+    padding-top: 50px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.properties {
+    display: inline-block;
+    color: white;
+    background-color: black;
+    padding: 20px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    margin: 40px;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 500px;
+    margin-bottom: 100px;
+}
+
+.QuintaTela {
+    background-color: black;
+}
+
+.icones1 {
+    padding-top: 15px;
+    padding-left: 100px;
+}
+
+.email {
+    padding-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.whatsapp {
+    padding-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.icones2 {
+    padding-top: 15px;
+    padding-left: 100px;
+}
+
+.instagram {
+    padding-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.youtube {
+    padding-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.dropdown-nav {
+    border: solid white 0px;
+    background-color: white;
+    border-bottom-color: white;
+}
+
+.btn-nav {
+    background-color: transparent;
+    border-color: transparent;
+}
