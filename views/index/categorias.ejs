@@ -1,15 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Categorias </title>
-</head>
+<h1>
+    Categorias
+</h1>
 
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <div class="card card-categoria shadow mb-4" onclick="listarOld()">
+                <div class="card-body card-body-categoria">
+                    <div>Old Money</div>
+                </div>
+              </div>
+        <!--
+            <button class="botao" type="button">
+                Old Money
+            </button>
+        -->
+
+        </div>
+
+        <div class="col-sm-6">
+
+            <button class="botao" type="button" onclick="listarModern()">
+                Modern
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+
+            <button class="botao" type="button" onclick="listarBeach()">
+                Beach
+            </button>
+
+        </div>
+
+        <div class="col-sm-6">
+
+            <button class="botao" type="button" onclick="listarCity()">
+                City
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    let listarOld =[
+        {
+            "id": 1,
+            "nome": "Nome 1",
+            "email": "email1@site.com"
+        },
+
+        {
+            "id": 2,
+            "nome": "Nome 2",
+            "email": "email2@site.com"
+        }
+    ] 
+
+    let listarModern =[
+
+    ]
+
+    let listarBeach =[
+
+    ]
+
+    let listarCity =[
+        
+    ]
+
+</script>
+
+<%- contentFor("head") %>
 <style>
-    
-.botao{
+
+.card-categoria {
+    background-image: url(/public/img/mansao.jpg);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.card-body-categoria {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 15rem;
+}
+
+.botao {
     background-color: #000000;
     color: #FFFFFF;
     border-radius: 8px;
@@ -17,90 +110,5 @@
     height: 100px;
     font-family: 'Roboto Slab', serif;
 }
+
 </style>
-
-<body>
-
-    <h1>
-        Categorias
-    </h1>
-    
-    <div class="container-fluid">
-
-            <div class="row">
-
-                <div class="col-sm-6">
-
-                    <button class="botao" type="button" onclick="listarOld()">
-                        Old Money
-                    </button>
-
-                </div>
-
-                <div class="col-sm-6">
-
-                    <button class="botao" type="button" onclick="listarModern()">
-                        Modern
-                    </button>
-
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-sm-6">
-
-                    <button class="botao" type="button" onclick="listarBeach()">
-                        Beach
-                    </button>
-
-                </div>
-
-                <div class="col-sm-6">
-
-                    <button class="botao" type="button" onclick="listarCity()">
-                        City
-                    </button>
-
-                </div>
-
-            </div>
-
-
-        </div>
-        
-    </div>
-
-    <script>
-
-        let listarOld =[
-            {
-                "id": 1,
-                "nome": "Nome 1",
-                "email": "email1@site.com"
-            },
-
-            {
-                "id": 2,
-                "nome": "Nome 2",
-                "email": "email2@site.com"
-            }
-        ] 
-
-        let listarModern =[
-
-        ]
-
-        let listarBeach =[
-
-        ]
-
-        let listarCity =[
-            
-        ]
-
-	</script>
-    
-</body>
-</html>
