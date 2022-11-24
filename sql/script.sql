@@ -1,13 +1,18 @@
 -- Esse script vale para o MySQL 8.x. Se seu MySQL for 5.x, precisa executar essa linha comentada:
--- CREATE DATABASE IF NOT EXISTS agenda;
-CREATE DATABASE IF NOT EXISTS agenda DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_0900_ai_ci;
+-- CREATE DATABASE IF NOT EXISTS propriedades;
+CREATE DATABASE IF NOT EXISTS propriedades DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_0900_ai_ci;
 
-USE agenda;
+USE propriedades;
 
-CREATE TABLE pessoa (
+CREATE TABLE propriedade (
   id int NOT NULL AUTO_INCREMENT,
   nome varchar(50) NOT NULL,
-  email varchar(50) NOT NULL,
+  preco int NOT NULL,
+  areatotal int NOT NULL,
+  areaconstruida int NOT NULL,
+  comodos int NOT NULL,
+  piscinas int NOT NULL,
+  vagas int NOT NULL,
   PRIMARY KEY (id),
   UNIQUE KEY nome_UN (nome)
 );

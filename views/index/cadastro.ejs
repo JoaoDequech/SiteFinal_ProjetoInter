@@ -1,21 +1,21 @@
 ﻿<form id="form">
-	<div>
+	<div class="form-group">
 		<label for="nome">Nome</label>
-		<input type="text" id="nome" name="nome" maxlength="50" />
+		<input class="form-control" type="text" id="nome" name="nome" maxlength="50" />
 	</div>
 
-	<div>
-		<label for="email">E-mail</label>
-		<input type="email" id="email" name="email" maxlength="50" />
+	<div class="form-group">
+		<label for="preco">Preço</label>
+		<input class="form-control" type="number" id="preco" name="preco" min="1" />
 	</div>
 
-	<div>
+	<div class="form-group">
 		<label for="foto">Foto</label>
-		<input type="file" id="foto" name="foto" accept="image/*" />
+		<input class="form-control" type="file" id="foto" name="foto" accept="image/jpeg" />
 	</div>
 
 	<div>
-		<button type="submit">Criar Pessoa</button>
+		<button class="btn btn-primary" type="submit">Criar Embarcação</button>
 	</div>
 </form>
 
@@ -61,7 +61,7 @@
 				required: true,
 				minlength: 3
 			},
-			email: {
+			preco: {
 				required: true
 			},
 			foto: {
@@ -70,12 +70,12 @@
 		},
 
 		submitHandler: function (form) {
-			// Não pode simplesmente fazer submitHandler: criarPessoa, porque criarPessoa() é async... :(
-			criarPessoa(form);
+			// Não pode simplesmente fazer submitHandler: criarPropriedade, porque criarPropriedade() é async... :(
+			criarPropriedade(form);
 		}
 	});
 
-	async function criarPessoa(form) {
+	async function criarPropriedade(form) {
 		// Vamos prevenir cliques duplos/acidentais :)
 		if (fetchAtivo) {
 			return;
@@ -90,17 +90,17 @@
 		};
 
 		try {
-			let response = await fetch("/criarPessoa", opcoes);
+			let response = await fetch("/criarPropriedade", opcoes);
 
 			if (response.ok) {
-				// Limpa os campos para facilitar a criação da próxima pessoa.
+				// Limpa os campos para facilitar a criação da próxima propriedade.
 				form.reset();
 				// Limpa os erros e sucessos.
 				$(form).validate().resetForm();
 
-				alert("Pessoa criada com sucesso!");
+				alert("Propriedade criada com sucesso!");
 			} else {
-				alert("Erro ao criar a pessoa!");
+				alert("Erro ao criar a propriedade!");
 			}
 		} catch (ex) {
 			alert("Erro de rede: " + ex.message);

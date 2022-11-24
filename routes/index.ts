@@ -25,6 +25,10 @@ class IndexRoute {
 		res.render("index/propriedades");
 	}
 
+	public async cadastro(req: app.Request, res: app.Response) {
+		res.render("index/cadastro");
+	}
+
 	public async criar(req: app.Request, res: app.Response) {
 		res.render("index/criar");
 	}
@@ -34,42 +38,50 @@ class IndexRoute {
 	@app.route.formData()
 	public async criarPropriedade(req: app.Request, res: app.Response) {
 		// Os dados enviados via POST ficam dentro de req.body
-		let pessoa = req.body;
+		let propriedade = req.body;
 
 		// É sempre muito importante validar os dados do lado do servidor,
 		// mesmo que eles tenham sido validados do lado do cliente!!!
-		if (!pessoa) {
+		if (!propriedade) {
 			res.status(400);
 			res.json("Dados inválidos");
 			return;
 		}
 
-		if (!pessoa.nome) {
+		if (!propriedade.nome) {
 			res.status(400);
 			res.json("Nome inválido");
 			return;
 		}
 
-		if (!pessoa.email) {
+		propriedade.preco = parseInt(propriedade.preco);
+		if (isNaN(propriedade.preco) || propriedade.preco <= 0) {
 			res.status(400);
-			res.json("E-mail inválido");
+			res.json("Preço inválido");
 			return;
 		}
 
 		// Verifica se a foto foi enviada
-		if (req.uploadedFiles && req.uploadedFiles.foto) {
-			console.log("Foto enviada! Tamanho: " + req.uploadedFiles.foto.size);
-		} else {
-			console.log("Foto não enviada!");
+		if (!req.uploadedFiles || !req.uploadedFiles.foto) {
+			res.status(400);
+			res.json("Preço inválido");
+			return;
 		}
 
 		await app.sql.connect(async (sql) => {
+			await app.fileSystem.saveUploadedFile("public/img/propriedades/" + 1 + ".jpg", req.uploadedFiles.foto);
 
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
+			await sql.beginTransaction();
 
 			// As interrogações serão substituídas pelos valores passados ao final, na ordem passada.
-			await sql.query("INSERT INTO pessoa (nome, email) VALUES (?, ?)", [pessoa.nome, pessoa.email]);
+			await sql.query("INSERT INTO pessoa (nome, email) VALUES (?, ?)", [propriedade.nome, propriedade.preco]);
 
+			const id: number = await sql.scalar("SELECT last_insert_id()");
+
+			await app.fileSystem.saveUploadedFile("public/img/propriedades/" + id + ".jpg", req.uploadedFiles.foto);
+
+			await sql.commit();
 		});
 
 		res.json(true);
