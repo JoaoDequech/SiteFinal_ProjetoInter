@@ -1,33 +1,43 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
+
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title><%=((typeof titulo === "undefined" || !titulo) ? "TopGMansions" : (titulo + " - TopGMansions")) %></title>
+    <title>
+        <%=((typeof titulo==="undefined" || !titulo) ? "TopGMansions" : (titulo + " - TopGMansions" )) %>
+    </title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet" />
 
-	<link href="<%= root %>/public/css/estilo.css" rel="stylesheet" />
+    <link href="<%= root %>/public/css/estilo.css" rel="stylesheet" />
 
     <%- defineContent("head") %>
 </head>
+
 <body>
     <div class="limitador">
 
         <div class="container-fluid PrimeiraTela">
 
             <div class="row">
-                <div class="col-sm-3 d-flex flex-row justify-content-center justify-content-sm-start align-items-center py-2">
+                <div
+                    class="col-sm-3 d-flex flex-row justify-content-center justify-content-sm-start align-items-center py-2">
                     <div class="dropdown dropdown-nav">
                         <button class="btn btn-light btn-nav dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,55 +55,57 @@
                 <div class="col-sm-6 text-center">
 
                     <a href="/">
-					<img src="<%= root %>/public/img/logo.png" width="300" />
+                        <img src="<%= root %>/public/img/logo.png" width="300" />
                     </a>
 
                 </div>
 
-                <div class="col-sm-3 d-flex flex-row justify-content-center justify-content-sm-end align-items-center py-2">
+                <div
+                    class="col-sm-3 d-flex flex-row justify-content-center justify-content-sm-end align-items-center py-2">
 
-					<img src="<%= root %>/public/img/perfil.png" width="51" />
+                    <img src="<%= root %>/public/img/perfil.png" width="51" />
 
                 </div>
             </div>
         </div>
 
-		<%- body %>
+        <%- body %>
 
-        <div class="container-fluid QuintaTela">
-            <div class="row">
+            <div class="container-fluid QuintaTela">
+                <div class="row">
 
-                <div class="col-sm-6 icones1">
-                    <p>
-                        <img src="<%= root %>/public/img/emailicon.png" width="80">
-                        <a class="email">contact@topgmansions.com</a>
+                    <div class="col-sm-6 icones1">
+                        <p>
+                            <img src="<%= root %>/public/img/emailicon.png" width="80">
+                            <a class="email">contact@topgmansions.com</a>
 
-                    </p>
+                        </p>
 
-                    <p>
-                        <img src="<%= root %>/public/img/whatsapp.png" width="80">
-                        <a class="whatsapp">(55) +11 995328233</a>
-                    </p>
+                        <p>
+                            <img src="<%= root %>/public/img/whatsapp.png" width="80">
+                            <a class="whatsapp">(55) +11 995328233</a>
+                        </p>
+                    </div>
+
+                    <div class="col-sm-6 icones2">
+                        <p>
+                            <img src="<%= root %>/public/img/logotipo-do-instagram.png" width="80">
+                            <a class="instagram">@topgmansions</a>
+
+                        </p>
+
+                        <p>
+                            <img src="<%= root %>/public/img/youtube.png" width="80">
+                            <a class="youtube">TopGMansions3</a>
+                        </p>
+                    </div>
+
+
                 </div>
-
-                <div class="col-sm-6 icones2">
-                    <p>
-                        <img src="<%= root %>/public/img/logotipo-do-instagram.png" width="80">
-                        <a class="instagram">@topgmansions</a>
-
-                    </p>
-
-                    <p>
-                        <img src="<%= root %>/public/img/youtube.png" width="80">
-                        <a class="youtube">TopGMansions3</a>
-                    </p>
-                </div>
-
-
             </div>
-        </div>
 
     </div>
-    
+
 </body>
+
 </html>

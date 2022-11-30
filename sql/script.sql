@@ -4,6 +4,15 @@ CREATE DATABASE IF NOT EXISTS propriedades DEFAULT CHARACTER SET utf8mb4 DEFAULT
 
 USE propriedades;
 
+CREATE TABLE modalidade (
+  idmodalidade int NOT NULL,
+  nome varchar(50) NOT NULL,
+  PRIMARY KEY (idmodalidade)
+);
+
+INSERT INTO modalidade (idmodalidade, nome) VALUES (1, 'Aluguel'), (2, 'Venda'), (3, 'Aluguel/Venda');
+
+
 CREATE TABLE propriedade (
   id int NOT NULL AUTO_INCREMENT,
   nome varchar(50) NOT NULL,
