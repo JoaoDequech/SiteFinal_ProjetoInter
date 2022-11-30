@@ -45,6 +45,10 @@ class IndexRoute {
 		res.render("index/criar");
 	}
 
+	async obrigado(req, res) {
+        res.render("index/obrigado");
+    }
+
 	@app.http.post()
 	// Configuração adicional para poder receber FormData e/ou arquivos.
 	@app.route.formData()
