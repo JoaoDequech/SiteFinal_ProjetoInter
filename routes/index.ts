@@ -22,7 +22,19 @@ class IndexRoute {
 	}
 
 	public async propriedades(req: app.Request, res: app.Response) {
-		res.render("index/propriedades");
+		let lista: any[];
+
+		await app.sql.connect(async (sql) => {
+
+			lista = await sql.query("SELECT p.id, p.nome, p.preco, p.areatotal, p.areaconstruida, p.comodos, p.piscinas, p.vagas");
+
+		});
+
+		const opcoes = {
+			lista: lista
+		};
+
+		res.render("index/embarcacoes", opcoes);
 	}
 
 	public async cadastro(req: app.Request, res: app.Response) {
