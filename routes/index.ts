@@ -34,7 +34,7 @@ class IndexRoute {
 			lista: lista
 		};
 
-		res.render("index/embarcacoes", opcoes);
+		res.render("index/propriedades", opcoes);
 	}
 
 	public async cadastro(req: app.Request, res: app.Response) {
