@@ -1,58 +1,59 @@
 <div class="tela">
 
     <div class="container-fluid">
-    
-        <% for (let i=0; i < lista.lenght; i++) { %>
-        <div class="col-sm-6">
-            <h2>
-                <%= lista[i].nome %>
-            </h2>
-    
-            <p>
-            Preço: <%= lista[i].preco %>
-            </p>
-    
-            <p>
-            Área total: <%= lista[i].areatotal %>
-            </p>
-    
-            <p>
-            Área contruida: <%= lista[i].areaconstruida %>
-            </p>
-    
-            <p>
-            Comodos: <%= lista[i].comodos %>
-            </p>
-    
-            <p>
-            Piscinas: <%= lista[i].piscinas %>
-            </p>
-    
-            <p>
-            Vagas: <%= lista[i].vagas %>
-            </p>
-    
-            <img class="mansao" src="/public/img/propriedades/<%= lista[i].idmansao %>.jpg" width="500">
-    
-   
+        <div class="row">
+            <% for (let i=0; i < lista.lenght; i++) { %>
+                <div class="col-sm-6">
+                    <h2>
+                        <%= lista[i].nome %>
+                    </h2>
+
+                    <p>
+                        Preço: <%= lista[i].preco %>
+                    </p>
+
+                    <p>
+                        Área total: <%= lista[i].areatotal %>
+                    </p>
+
+                    <p>
+                        Área contruida: <%= lista[i].areaconstruida %>
+                    </p>
+
+                    <p>
+                        Comodos: <%= lista[i].comodos %>
+                    </p>
+
+                    <p>
+                        Piscinas: <%= lista[i].piscinas %>
+                    </p>
+
+                    <p>
+                        Vagas: <%= lista[i].vagas %>
+                    </p>
+
+                    <img class="mansao" src="/public/img/propriedades/<%= lista[i].idmansao %>.jpg" width="500">
+
+
+                </div>
+                <% } %>
         </div>
-        <% } %>    
     </div>
-    </div>  
-    
-    
-    <%- contentFor("head") %>
-    
-        <style type="text/css">
-            .tela {
-                text-align: center;
-                padding-top: 20px;
-                padding-bottom: 50px;
-            }
-    
-            .mansao {
-                border-radius: 20px;
-            }
-        </style>
-    
+</div>
+
+
+<%- contentFor("head") %>
+
+    <style type="text/css">
+        .tela {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+
+        .mansao {
+            border-radius: 20px;
+        }
+    </style>
+
     </div>
