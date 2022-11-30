@@ -26,7 +26,7 @@ class IndexRoute {
 
 		await app.sql.connect(async (sql) => {
 
-			lista = await sql.query("SELECT p.id, p.nome, p.preco, p.areatotal, p.areaconstruida, p.comodos, p.piscinas, p.vagas FROM propriedades p");
+			lista = await sql.query("SELECT id, nome, preco, areatotal, areaconstruida, comodos, piscinas, vagas FROM propriedades");
 
 		});
 
