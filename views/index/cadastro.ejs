@@ -40,6 +40,18 @@
 		<input class="form-control" type="file" id="foto" name="foto" accept="image/jpeg" />
 	</div>
 
+	<div class="form-group">
+		<div class="input-box">
+			<label class="details" for="idmodalidade">Modalidade</label>
+			<select id="idmodalidade" name="idmodalidade">
+				<option value="">Selecione...</option>
+				<option value="1">Aluguel</option>
+				<option value="2">Venda</option>
+				<option value="3">Aluguel/Venda</option>
+			</select>
+		</div>
+	</div>
+
 	<div class="button">
 		<button class="btn btn-primary" type="submit">Registrar Mansão</button>
 	</div>
@@ -94,6 +106,9 @@
 				required: true
 			},
 			areatotal: {
+				required: true
+			},
+			idmodalidade:{
 				required: true
 			},
 			comodos: {
