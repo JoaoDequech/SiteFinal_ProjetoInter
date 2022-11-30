@@ -39,7 +39,7 @@
 		<input class="form-control" type="file" id="foto" name="foto" accept="image/jpeg" />
 	</div>
 
-	<div>
+	<div class="button">
 		<button class="btn btn-primary" type="submit">Registrar Mansão</button>
 	</div>
 </form>
@@ -91,7 +91,13 @@
 			},
 			foto: {
 				required: true
-			}
+			},
+			areatotal: {
+				required: true
+			},
+			comodos: {
+				required: true
+			},
 		},
 
 		submitHandler: function (form) {
@@ -131,4 +137,67 @@
 			alert("Erro de rede: " + ex.message);
 		}
 	}
+
+// nome preco areatotal areaconstruida comodos piscinas vagas foto
+
+	function verificar() {
+
+let inputATotal = document.getElementById("inputATotal");
+
+let inputAConst = document.getElementById("inputAConst");
+
+let inputComodos = document.getElementById("inputComodos");
+
+let inputPisc = document.getElementById("inputPisc");
+
+let inputVagas= document.getElementById("inputVagas");
+
+let inputPre = document.getElementById("inputPre");
+
+let areatotal= parseInt(inputATotal.value);
+
+let areaconstruida = parseInt(inputAConst.value);
+
+let comodos = parseInt(inputComodos.value);
+
+let piscinas = parseInt(inputPisc.value);
+
+let vagas = parseInt(inputVagas.value);
+
+let preco = parseInt(inputPre.value);
+
+
+// nome, preço, foto, areatotal comodos-->
+
+
+if (isNaN(areatotal) || tamanho < 0 ) {
+
+	inputRes.textContent = "Número inválido";
+
+} else if (isNaN(comodos) || comodos < 1) {
+
+	inputRes.textContent = "Número inválido";
+
+} else if (isNaN(preco) || preco < 0) {
+
+	inputRes.textContent = "Número inválido";
+}
+
+
+let resultado;
+
+inputRes.textContent = resultado;
+
+
+}
 </script>
+
+<%- contentFor("head") %>
+    <style type="text/css">
+
+		form .button {
+            height: 45px;
+            margin: 35px 0
+        }
+
+	</style>
