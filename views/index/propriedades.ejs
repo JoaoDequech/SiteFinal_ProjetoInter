@@ -34,7 +34,10 @@
 
                     <img class="mansao" src="<%- root %>/public/img/propriedades/<%= lista[i].id %>.jpg" width="500">
 
-
+                    <div class="button">
+                        <button class="btn btn-primary" href="<%- root %>/obrigado" type="submit">Acompanhar</button>
+                    </div>
+                    
                 </div>
                 <% } %>
         </div>
@@ -55,4 +58,9 @@
         .mansao {
             border-radius: 20px;
         }
+        form .button {
+			height: 45px;
+			margin: 35px 0;
+			text-align: center;
+		}
     </style>
