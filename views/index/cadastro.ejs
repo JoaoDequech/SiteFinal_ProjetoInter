@@ -144,7 +144,7 @@
 		};
 
 		try {
-			let response = await fetch("/criarPropriedade", opcoes);
+			let response = await fetch("<%- root %>/criarPropriedade", opcoes);
 
 			if (response.ok) {
 				// Limpa os campos para facilitar a criação da próxima propriedade.
