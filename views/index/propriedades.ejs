@@ -2,7 +2,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <% for (let i=0; i < lista.lenght; i++) { %>
+            <% for (let i=0; i < lista.length; i++) { %>
                 <div class="col-sm-6">
                     <h2>
                         <%= lista[i].nome %>
@@ -32,7 +32,7 @@
                         Vagas: <%= lista[i].vagas %>
                     </p>
 
-                    <img class="mansao" src="/public/img/propriedades/<%= lista[i].id %>.jpg" width="500">
+                    <img class="mansao" src="<%- root %>/public/img/propriedades/<%= lista[i].id %>.jpg" width="500">
 
 
                 </div>

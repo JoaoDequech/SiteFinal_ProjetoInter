@@ -1,6 +1,8 @@
 ﻿import app = require("teem");
 
 app.run({
+	root: "",
+	port: 3018,
 	// Configurações de acesso ao banco de dados.
 	// Mais informações: https://www.npmjs.com/package/mysql2#using-connection-pools
 	sqlConfig: {

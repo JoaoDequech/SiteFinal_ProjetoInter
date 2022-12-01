@@ -77,31 +77,36 @@ class IndexRoute {
 			return;
 		}
 
-		if (!propriedade.areatotal) {
+		propriedade.areatotal = parseInt(propriedade.areatotal);
+		if (isNaN(propriedade.areatotal) || propriedade.areatotal <= 0) {
 			res.status(400);
 			res.json("Valor inválido");
 			return;
 		}
 
-		if (!propriedade.areaconstruida) {
+		propriedade.areaconstruida = parseInt(propriedade.areaconstruida);
+		if (isNaN(propriedade.areaconstruida) || propriedade.areaconstruida <= 0) {
 			res.status(400);
 			res.json("Valor inválido");
 			return;
 		}
 
-		if (!propriedade.comodos) {
+		propriedade.comodos = parseInt(propriedade.comodos);
+		if (isNaN(propriedade.comodos) || propriedade.comodos <= 0) {
 			res.status(400);
 			res.json("Valor inválido");
 			return;
 		}
 
-		if (!propriedade.piscinas) {
+		propriedade.piscinas = parseInt(propriedade.piscinas);
+		if (isNaN(propriedade.piscinas) || propriedade.piscinas <= 0) {
 			res.status(400);
 			res.json("Valor inválido");
 			return;
 		}
 
-		if (!propriedade.vagas) {
+		propriedade.vagas = parseInt(propriedade.vagas);
+		if (isNaN(propriedade.vagas) || propriedade.vagas <= 0) {
 			res.status(400);
 			res.json("Valor inválido");
 			return;
@@ -118,8 +123,6 @@ class IndexRoute {
 		}
 
 		await app.sql.connect(async (sql) => {
-			await app.fileSystem.saveUploadedFile("public/img/propriedades/" + 1 + ".jpg", req.uploadedFiles.foto);
-
 			// Todas os comandos SQL devem ser executados aqui dentro do app.sql.connect().
 			await sql.beginTransaction();
 
