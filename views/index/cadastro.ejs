@@ -1,61 +1,62 @@
-﻿
-<form id="form">
-	<div class="form-group">
-		<label for="nome">Nome</label>
-		<input class="form-control" type="text" id="nome" name="nome" maxlength="50" />
-	</div>
-
-	<div class="form-group">
-		<label for="preco">Preço</label>
-		<input class="form-control" type="number" id="preco" name="preco" min="1" />
-	</div>
-
-	<div class="form-group">
-		<label for="foto">Área Total</label>
-		<input class="form-control" type="number" id="areatotal" name="areatotal" min="1" />
-	</div>
-
-	<div class="form-group">
-		<label for="foto">Área Construída</label>
-		<input class="form-control" type="number" id="areaconstruida" name="areaconstruida" min="1" />
-	</div>
-
-	<div class="form-group">
-		<label for="foto">Comodos</label>
-		<input class="form-control" type="number" id="comodos" name="comodos" min="1" />
-	</div>
-
-	<div class="form-group">
-		<label for="foto">Piscinas</label>
-		<input class="form-control" type="number" id="piscinas" name="piscinas" min="1" />
-	</div>
-
-	<div class="form-group">
-		<label for="foto">Vagas</label>
-		<input class="form-control" type="number" id="vagas" name="vagas" min="1" />
-	</div>
-	
-	<div class="form-group">
-		<label for="foto">Foto</label>
-		<input class="form-control" type="file" id="foto" name="foto" accept="image/jpeg" />
-	</div>
-
-	<div class="form-group">
-		<div class="input-box">
-			<label class="details" for="idmodalidade">Modalidade</label>
-			<select id="idmodalidade" name="idmodalidade">
-				<option value="">Selecione...</option>
-				<option value="1">Aluguel</option>
-				<option value="2">Venda</option>
-				<option value="3">Aluguel/Venda</option>
-			</select>
+﻿<div class="caixas">
+	<form id="form">
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input class="form-control" type="text" id="nome" name="nome" maxlength="50" />
 		</div>
-	</div>
 
-	<div class="button">
-		<button class="btn btn-primary" type="submit">Registrar Mansão</button>
-	</div>
-</form>
+		<div class="form-group">
+			<label for="preco">Preço</label>
+			<input class="form-control" type="number" id="preco" name="preco" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Área Total</label>
+			<input class="form-control" type="number" id="areatotal" name="areatotal" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Área Construída</label>
+			<input class="form-control" type="number" id="areaconstruida" name="areaconstruida" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Comodos</label>
+			<input class="form-control" type="number" id="comodos" name="comodos" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Piscinas</label>
+			<input class="form-control" type="number" id="piscinas" name="piscinas" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Vagas</label>
+			<input class="form-control" type="number" id="vagas" name="vagas" min="1" />
+		</div>
+
+		<div class="form-group">
+			<label for="foto">Foto</label>
+			<input class="form-control" type="file" id="foto" name="foto" accept="image/jpeg" />
+		</div>
+
+		<div class="form-group">
+			<div class="input-box">
+				<label class="details" for="idmodalidade">Modalidade</label>
+				<select id="idmodalidade" name="idmodalidade">
+					<option value="">Selecione...</option>
+					<option value="1">Aluguel</option>
+					<option value="2">Venda</option>
+					<option value="3">Aluguel/Venda</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="button">
+			<button class="btn btn-primary" type="submit">Registrar Mansão</button>
+		</div>
+	</form>
+</div>
 
 <!--
 	jQuery
@@ -102,16 +103,22 @@
 			preco: {
 				required: true
 			},
-			foto: {
-				required: true
-			},
 			areatotal: {
 				required: true
 			},
-			idmodalidade:{
+			areaconstruida:  {
 				required: true
 			},
 			comodos: {
+				required: true
+			},
+			piscinas: {
+				required: true
+			},
+			vagas: {
+				required: true
+			},
+			idmodalidade:{
 				required: true
 			},
 		},
@@ -133,7 +140,7 @@
 			// Esta forma não depende do jQuery, não precisa configurar o header e
 			// ainda permite o envio de arquivos! Mas precisa de uma linha de configuração
 			// a mais do lado do Node.js!
-		    body: new FormData(form)
+			body: new FormData(form)
 		};
 
 		try {
@@ -154,66 +161,74 @@
 		}
 	}
 
-// nome preco areatotal areaconstruida comodos piscinas vagas foto
+	// nome preco areatotal areaconstruida comodos piscinas vagas foto
 
 	function verificar() {
 
-let inputATotal = document.getElementById("inputATotal");
+		let inputATotal = document.getElementById("inputATotal");
 
-let inputAConst = document.getElementById("inputAConst");
+		let inputAConst = document.getElementById("inputAConst");
 
-let inputComodos = document.getElementById("inputComodos");
+		let inputComodos = document.getElementById("inputComodos");
 
-let inputPisc = document.getElementById("inputPisc");
+		let inputPisc = document.getElementById("inputPisc");
 
-let inputVagas= document.getElementById("inputVagas");
+		let inputVagas = document.getElementById("inputVagas");
 
-let inputPre = document.getElementById("inputPre");
+		let inputPre = document.getElementById("inputPre");
 
-let areatotal= parseInt(inputATotal.value);
+		let areatotal = parseInt(inputATotal.value);
 
-let areaconstruida = parseInt(inputAConst.value);
+		let areaconstruida = parseInt(inputAConst.value);
 
-let comodos = parseInt(inputComodos.value);
+		let comodos = parseInt(inputComodos.value);
 
-let piscinas = parseInt(inputPisc.value);
+		let piscinas = parseInt(inputPisc.value);
 
-let vagas = parseInt(inputVagas.value);
+		let vagas = parseInt(inputVagas.value);
 
-let preco = parseInt(inputPre.value);
-
-
-// nome, preço, foto, areatotal comodos-->
+		let preco = parseInt(inputPre.value);
 
 
-if (isNaN(areatotal) || tamanho < 0 ) {
-
-	inputRes.textContent = "Número inválido";
-
-} else if (isNaN(comodos) || comodos < 1) {
-
-	inputRes.textContent = "Número inválido";
-
-} else if (isNaN(preco) || preco < 0) {
-
-	inputRes.textContent = "Número inválido";
-}
+		// nome, preço, foto, areatotal comodos-->
 
 
-let resultado;
+		if (isNaN(areatotal) || tamanho < 0) {
 
-inputRes.textContent = resultado;
+			inputRes.textContent = "Número inválido";
+
+		} else if (isNaN(comodos) || comodos < 1) {
+
+			inputRes.textContent = "Número inválido";
+
+		} else if (isNaN(preco) || preco < 0) {
+
+			inputRes.textContent = "Número inválido";
+		}
 
 
-}
+		let resultado;
+
+		inputRes.textContent = resultado;
+
+
+	}
 </script>
 
 <%- contentFor("head") %>
-    <style type="text/css">
-
+	<style type="text/css">
 		form .button {
-            height: 45px;
-            margin: 35px 0
-        }
-
+			height: 45px;
+			margin: 35px 0;
+			text-align: center;
+		}
+		.caixas{
+			height: 45px;
+			margin: 35px 0;
+			text-align: left;
+			padding-bottom: 802px;
+			padding-left: 500px;
+			padding-right: 500px;
+	
+		}
 	</style>

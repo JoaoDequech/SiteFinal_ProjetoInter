@@ -1,99 +1,153 @@
-<h1>
-    Categorias
-</h1>
+<div class="cat">
+    <h1>
+        Categorias
+    </h1>
+</div>
+<div class="bubbles">
+    <div class="container-fluid">
 
-<div class="container-fluid">
+        <div class="row">
 
-    <div class="row">
-
-        <div class="col-sm-6">
-
-            <div class="card card-categoriaOld shadow mb-4">
-                <div class="card-body card-body-categoria">
-                    <div>Old Money</div>
+            <div class="col-sm-6">
+                <div class="old">
+                    <b>OLD MONEY</b>
                 </div>
-              </div>
+                <div class="card card-categoriaOld shadow mb-4">
+                    <div class="card-body card-body-categoria"></div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="mod">
+                    <b>MODERN</b>
+                </div>
+
+                <div class="card card-categoriaModern shadow mb-4">
+                    <div class="card-body card-body-categoria">
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="col-sm-6">
+        <div class="row">
 
-            <div class="card card-categoriaModern shadow mb-4">
-                <div class="card-body card-body-categoria">
-                    <div>Modern</div>
+            <div class="col-sm-6">
+
+                <div class="bea">
+                    <b>BEACH</b>
                 </div>
-              </div>
+
+                <div class="card card-categoriaBeach shadow mb-4">
+                    <div class="card-body card-body-categoria"></div>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="cit">
+                    <b>CITY</b>
+                </div>
+
+                <div class="card card-categoriaCity shadow mb-4">
+                    <div class="card-body card-body-categoria"></div>
+                </div>
+
+            </div>
 
         </div>
-
     </div>
-
-    <div class="row">
-
-        <div class="col-sm-6">
-
-            <div class="card card-categoriaBeach shadow mb-4">
-                <div class="card-body card-body-categoria">
-                    <div>Beach</div>
-                </div>
-              </div>
-
-        </div>
-
-        <div class="col-sm-6">
-
-            <div class="card card-categoriaCity shadow mb-4">
-                <div class="card-body card-body-categoria">
-                    <div>City</div>
-                </div>
-              </div>
-
-        </div>
-
-    </div>
-
-
 </div>
 
 <%- contentFor("head") %>
-<style>
+    <style>
+        .card-categoriaOld {
+            background-image: url(/public/img/OldMoneyHouse.jpg);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 20%;
+            width: 400px;
+        }
 
-.card-categoriaOld {
-    background-image: url(/public/img/OldMoneyHouse.jpg);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
+        .card-categoriaModern {
+            background-image: url(/public/img/ModernHouse.jpg);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 20%;
+            width: 400px;
+        }
 
-.card-categoriaModern {
-    background-image: url(/public/img/ModernHouse.jpg);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
+        .card-categoriaBeach {
+            background-image: url(/public/img/BeachHouse.jpg);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 20%;
+            width: 400px;
+        }
 
-.card-categoriaBeach {
-    background-image: url(/public/img/BeachHouse.jpg);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
+        .card-categoriaCity {
+            background-image: url(/public/img/CityHouse.jpeg);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 20%;
+            width: 400px;
+        }
 
-.card-categoriaCity {
-    background-image: url(/public/img/CityHouse.jpeg);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
+        .card-body-categoria {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            min-height: 15rem;
+            color: #FFFFFF;
+            font-family: 'Roboto Slab', serif;
+        }
 
-.card-body-categoria {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    min-height: 15rem;
-    color: #FFFFFF;
-    font-family: 'Roboto Slab', serif;
-}
+        .cat {
+            padding-top: 50px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
 
-</style>
+        .bubbles {
+            padding-left: 200px;
+            padding-right: 200px;
+            padding-bottom: 45px;
+        }
+
+        .old {
+            text-align: center;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .mod {
+            text-align: center;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .bea {
+            text-align: center;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+
+        .cit {
+            text-align: center;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+    </style>

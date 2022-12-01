@@ -12,9 +12,9 @@ CREATE TABLE modalidade (
 
 INSERT INTO modalidade (idmodalidade, nome) VALUES (1, 'Aluguel'), (2, 'Venda'), (3, 'Aluguel/Venda');
 
-
 CREATE TABLE propriedade (
   id int NOT NULL AUTO_INCREMENT,
+  idmodalidade int NOT NULL,
   nome varchar(50) NOT NULL,
   preco int NOT NULL,
   areatotal int NOT NULL,

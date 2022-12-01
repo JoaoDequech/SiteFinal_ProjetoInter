@@ -26,7 +26,7 @@ class IndexRoute {
 
 		await app.sql.connect(async (sql) => {
 
-			lista = await sql.query("SELECT p.id, p.nome, p.preco, p.areatotal, p.areaconstruida, p.comodos, p.piscinas, p.vagas, m.nome modalidade FROM propriedades p INNER JOIN modalidade m ON m.idmodalidade = p.idmodalidade ORDER BY p.nome ASC");
+			lista = await sql.query("SELECT p.id, p.nome, p.preco, p.areatotal, p.areaconstruida, p.comodos, p.piscinas, p.vagas, m.nome modalidade FROM propriedade p INNER JOIN modalidade m ON m.idmodalidade = p.idmodalidade ORDER BY p.nome ASC");
 
 		});
 
@@ -77,6 +77,39 @@ class IndexRoute {
 			return;
 		}
 
+		if (!propriedade.areatotal) {
+			res.status(400);
+			res.json("Valor inválido");
+			return;
+		}
+
+		if (!propriedade.areaconstruida) {
+			res.status(400);
+			res.json("Valor inválido");
+			return;
+		}
+
+		if (!propriedade.comodos) {
+			res.status(400);
+			res.json("Valor inválido");
+			return;
+		}
+
+		if (!propriedade.piscinas) {
+			res.status(400);
+			res.json("Valor inválido");
+			return;
+		}
+
+		if (!propriedade.vagas) {
+			res.status(400);
+			res.json("Valor inválido");
+			return;
+		}
+
+
+
+
 		// Verifica se a foto foi enviada
 		if (!req.uploadedFiles || !req.uploadedFiles.foto) {
 			res.status(400);
@@ -91,7 +124,8 @@ class IndexRoute {
 			await sql.beginTransaction();
 
 			// As interrogações serão substituídas pelos valores passados ao final, na ordem passada.
-			await sql.query("INSERT INTO pessoa (nome, email) VALUES (?, ?)", [propriedade.nome, propriedade.preco]);
+			await sql.query("INSERT INTO propriedade (nome, preco, areatotal, areaconstruida, comodos, piscinas, vagas, idmodalidade) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
+			[propriedade.nome, propriedade.preco, propriedade.areatotal, propriedade.areaconstruida, propriedade.comodos, propriedade.piscinas, propriedade.vagas, propriedade.idmodalidade]);
 
 			const id: number = await sql.scalar("SELECT last_insert_id()");
 
